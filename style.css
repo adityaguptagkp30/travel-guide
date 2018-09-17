@@ -1,0 +1,24 @@
+.title{
+  width:50%;
+  height: 50px;
+  text-align: center;
+  float: left;
+}
+.login{
+	width: 20%;
+	height: 50px;
+	text-align: center;
+	border: 2px solid red;
+	border-radius: 5px;
+	background-color: yellow;
+	float: right;
+}
+.signup
+{width: 20%;
+	height: 50px;
+	text-align: center;
+	border: 2px solid red;
+	border-radius: 5px;
+	background-color: yellow;
+float: right;
+}
