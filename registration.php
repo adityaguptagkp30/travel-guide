@@ -10,10 +10,11 @@ if(isset($_POST['submit']))
 	
 $firstname=$_POST['firstname'];    
 $email=$_POST['email'];     
-$password=$_POST['password'];     
-$teamname=$_POST['teamname'];
-$budget=$_POST['budget'];
-$query="insert into reg(firstname,email,password,teamname,budget)values('$firstname','$email','$password','$teamname','$budget')";
+$hometown=$_POST['hometown'];
+$gender=$_POST['gender'];
+$password=$_POST['password'];
+$password=md5($password);     
+$query="INSERT INTO reg(firstname,email,hometown,gender,password)VALUES('$firstname','$email','$hometown','$gender','$password')";
 $run=mysqli_query($conn,$query);
 if($run){
 echo"data insert sucessful";
@@ -23,7 +24,7 @@ echo"error:".mysqli_error($conn);
 }
 }
 ?>
-<center><h1>*****registration for ipl players*****</h1></center>
+<center><h1>*****travel guide for those who love travelling*****</h1></center>
 <div class="form">
 <form action="registration.php" method="POST">
 <center>
@@ -41,16 +42,17 @@ echo"error:".mysqli_error($conn);
 <td><input type="email" name="email" placeholder="emailid " required=""></td> 
 </tr>
 <tr>
+<td>hometown</td>
+<td><input type="text" name="hometown" placeholder="hometown" required=""></td> 
+</tr>
+<tr>
+<td>gender</td>
+<td><input type="text" name="gender"placeholder="sex" required=""></td> 
+</tr>
+
+<tr>
 <td> password</td>
-<td><input type="pass" name="password"placeholder="password" required=""></td> 
-</tr>
-<tr>
-<td>teamname</td>
-<td><input type="text" name="teamname"placeholder="teamname" required=""></td> 
-</tr>
-<tr>
-<td>budget</td>
-<td><input type="text" name="budget"placeholder="budget" required=""></td> 
+<td><input type="password" name="password"placeholder="hidden password" required=""></td> 
 </tr>
 
 <tr>
