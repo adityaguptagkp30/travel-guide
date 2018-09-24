@@ -4,6 +4,8 @@
  <html>
  <head>
  	<title>login</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<link rel="stylesheet" type="text/css" href="style.css">
  </head>
  <body>
  <div class="container">
@@ -13,7 +15,7 @@
  	    <div class="nav-link"><a href="index.php"><h3>Signup</h3></a></div>	
  	</div>
  	<form action="tlogin.php" method="post">
- 		<h1 class="form-title">Login to tgs</h1>
+ 		<h1 class="form-title">Login to tg</h1>
  		<div class="login-form">
  			<?php
 				if(!empty($response))

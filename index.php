@@ -3,6 +3,7 @@
 ?>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>TRAVEL GUIDE</title>
 </head>
@@ -26,15 +27,15 @@
 				?>
 		<div class="form-group">
 			<label class="form-label">Name:</label>
-			<input class="form-control" id="name" placeholder="Name" name="name">
+			<input class="form-control" id="name" placeholder="Name    " name="name">
 		</div>
 		<div class="form-group">
 			<label class="form-label">Email:</label>
-			<input class="form-control" id="email" placeholder="Email" name="email">
+			<input type="email" class="form-control" id="email" placeholder="Email   " name="email">
 		</div>
 		<div class="form-group">
 			<label class="form-label">Password:</label>
-			<input class="form-control" id="password" placeholder="password" name="password">
+			<input type="password" class="form-control" id="password" placeholder="password" name="password">
 		</div>
 		<input class="btn" type="submit" value="Register">
 	</form>
