@@ -25,30 +25,23 @@
   	}
   	else
   	{
-  		$query="SELECT `email` FROM `users` WHERE `email`='$email'";
-  		$result=mysqli_query($conn,$query);
+       if (preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/", $email)) 
+       {
+       $response='INVALID EMAIL';
+       }
+  	   $query="SELECT `email` FROM `users` WHERE `email`='$email'";
+  		 $result=mysqli_query($conn,$query);
   		
-  	if(mysqli_num_rows($result) > 0)
+  	   if(mysqli_num_rows($result) > 0)
             {
                 $response = 'Email already registered';
             }
             else
             {
-                 /** 
-                 *  you can use encryption for password for security
-                 * there are many encryption functions like md5 , sha1 , sha156 etc
-                 */
                 $password = md5($password);
-
-                /** 
-                 * register the user to databse using the connection variable
-                 * include the connection file for using the connection variable
-                 */
-
                 //write the query for inserting data into databse
                 $query = "INSERT INTO `users`(`name`, `email`, `password`) VALUES ('$name','$email','$password')";
-
-                //execute the query using mysqli_connect() function which returns true on success
+               //execute the query using mysqli_connect() function which returns true on success
                 if( mysqli_query($conn, $query) )
                 {
                     $correct_response = 'Registration successfull...';
@@ -58,7 +51,9 @@
                 {
                     $response = 'Something went wrong';
                 }
+        
             }
-        }
+         
+      }
     }
 ?>

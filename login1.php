@@ -43,4 +43,16 @@
  		}
  	}
  }
+ if(isset($_SESSION['user']))
+    {
+        
+        
+        header('Location:userpanel.php');
+    }
+     if(isset($_SESSION['admin']))
+    {
+        
+        
+        header('Location:guide/adminpanel.php');
+    }
  ?>
