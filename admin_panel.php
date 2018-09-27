@@ -45,7 +45,7 @@ if($total!=0)
 	          <td>".$result['gender']."</td>
 	          <td>".$result['password']."</td>
 			  <td><a href='update.php?firstname=$result[firstname]& email=$result[email]& hometown=$result[hometown]& gender=$result[gender]& password=$result[password]'>EDIT</a></td>
-			  <td><a href='delete.php'>DELETE</a></td>
+			  <td><a href='delete.php?firstname=$result[firstname]& email=$result[email]& hometown=$result[hometown]& gender=$result[gender]& password=$result[password]'>DELETE</a></td>
 	   </tr>";
 	
 	
