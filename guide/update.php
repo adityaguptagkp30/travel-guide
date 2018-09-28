@@ -1,6 +1,6 @@
 
 <?php 
-		session_start();
+		// session_start();
 		require('../connection.php');
 		require('adminpanel.php');
 		if (isset($_SESSION['admin'])) 

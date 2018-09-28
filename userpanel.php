@@ -1,7 +1,7 @@
 <?php
    session_start();
     require('connection.php');
-   
+    
     
     ?>
 <html>
@@ -28,7 +28,7 @@
 
 		<div class="nav-link"><a href="#">
 			<?php if(isset($_SESSION['user'])){
-				echo "<h1>Welcome: ".$_SESSION['user']."</h1>";
+				echo "Welcome: ".$_SESSION['user']."";
 
 			}
 			  else
@@ -37,11 +37,13 @@
 			  }
 			?>
 		</a></div>
-		<div class="nav-link logIn"><a href="logout1.php"><h3>Log Out</h3></a> </div>
-		<form action="w.php" method="post">
+		<div class="nav-link logIn"><a href="logout1.php"><h3>Log Out</h3></a> </div></div>
+	<br><br>
+	<center>	<form action="w.php" method="post">
 		<input type="text" placeholder="place" name="place">
 		<input type="submit" name="SUBBMIT" value="SUBMIT">
 		</form>
-	</div>
+	</center>
+	
 </body>
 </html>

@@ -34,6 +34,6 @@
  	{
  	      $a="NOT PRESENT";
           echo $a;
- 		  header('Location:userpanel.php');
+ 		  header('Location:not.php');
  	}
 ?>
