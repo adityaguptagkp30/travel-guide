@@ -1,7 +1,7 @@
 <?php
   session_start();
   require('connection.php');
-  include('place1.php');
+  //include('place1.php');
   //include('info.php');
   if(isset($_SESSION['user'])||isset($_SESSION['admin']))
   {
@@ -14,7 +14,7 @@
   }
   $a=$_SESSION['id'];
 
-   echo "WELCOME<br>";
+   echo "<center><h1>HOTELS</h1></center><br>";
    $sql = "SELECT * FROM hotels where id=$a";
    $result = mysqli_query($conn, $sql);
 
@@ -25,12 +25,12 @@
         {
      //      $id=$row["name"];
     	// $a=$row["image"];
-    	echo '<a style="height:200px;width:40%;float:left;border:2px solid black;margin:2%;" href="hinfo.php?id=' . $row["image"] . '"><div style="height:200px;width:100%;float:left;border:2px solid black;margin:2%;">';
+    	echo '<div style="width:100%;height:200px;"><a style="height:200px;width:40%;float:left;border:2px solid black;margin:2%;" href="hinfo.php?id=' . $row["image"] . '"><div style="height:200px;width:100%;float:left;border:2px solid black;margin:2%;">';
         echo  " <h1>  " . $row["name"]. "</h1><br><h3> " . $row["address"]. "</h3><br><br>";
        $image = $row['image']; 
         // echo $a;
         // echo '<img style="position:relative;" src="guide/uploads/'.$a.'" width="100%" height="200px" />';
-        echo '</div></a>';
+        echo '</div></a></div>';
         }
 
     } 

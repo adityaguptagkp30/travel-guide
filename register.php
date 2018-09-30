@@ -13,22 +13,27 @@
 
   }
   $response='';
-  if($_SERVER['REQUEST_METHOD']=='POST')
-  {
-  	$name=$_POST['name'];
-  	$email=$_POST['email'];
-  	$password=$_POST['password'];
-  	$response='';
-  	$correct_response='';
-  	if(empty($name) || empty($email) || empty($password))
-  	{
-  		$response='Fields cant be empty';
-  	}
-  	else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $response = 'Invalid email format'; 
-    }
+  if($_SERVER['REQUEST_METHOD']=='POST' && $check==0)
+{ $hash = md5( rand(0,1000) );
+          	$name=$_POST['name'];
+          	$email=$_POST['email'];
+          	$password=$_POST['password'];
+          	$response='';
+          	$correct_response='';
+          	if(empty($name) || empty($email) || empty($password))
+          	{
+          		$response='Fields cant be empty';
+          	}
+  	else if(!preg_match("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^",$email))
+{ 
+$response='Invalid email';
+}            
+      
+    else if ( preg_match('/\s/',$name) ){
+
+                $response='Your username must not contain any whitespace';}
     else
-    {
+      {
   	   $query="SELECT `email` FROM `users` WHERE `email`='$email'";
   		 $result=mysqli_query($conn,$query);
   		//check if email is already registered
@@ -40,8 +45,9 @@
             else
             {
                 $password = md5($password);
+                $verification=2;
                 //write the query for inserting data into databse
-                $query = "INSERT INTO `users`(`name`, `email`, `password`) VALUES ('$name','$email','$password')";
+                $query = "INSERT INTO `users`(`name`, `email`, `password`,`verification`) VALUES ('$name','$email','$password','$verification')";
                //execute the query using mysqli_connect() function which returns true on success
                 if( mysqli_query($conn, $query) )
                 {    
@@ -66,7 +72,23 @@ $mail->addAddress($email);     // Add a recipient              // Name is option
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'TRAVEL GUIDE WELCOMES';
-$mail->Body    = 'This is the HTML message body <b>WELCOME TO MY PROJECT click on link to verify your account</b>';
+$password=md5($_POST['password']);
+$query1="select * from users where email='$_POST[email]' AND password='$password'";
+$run_query=mysqli_query($conn,$query1);
+if($run_query){
+  
+if(mysqli_num_rows($run_query)>0){
+  
+$_SESSION["email"]=$email;
+$_SESSION["password"]=$password;
+  }
+else
+{
+echo"<div class='alert alert-warning'><strong>warning!</strong>session creation not sucessfull...</div>";
+}
+}
+
+$mail->Body    = 'Your Activation Code is '.$hash.' Please Click On This link <a href="http://localhost/travelguides/verification_update.php">'.$hash.'</a>to activate your account.';
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
@@ -80,14 +102,15 @@ if(!$mail->send()) {
 
                     $correct_response = 'Registration successfull...';
                     // to take to login page within 2 sec
-                    //header("refresh:2;url=tlogin.php");
-                }
+}                    //header("refresh:2;url=tlogin.php");
+                
+              
                 else
                 {
                     $response = 'Something went wrong';
                 }
-        
-            }
+        }
+            
          
       }
     }

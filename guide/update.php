@@ -32,7 +32,7 @@
 		      VALUES ('$place');";
 		 	  $result=mysqli_query($conn,$query);
 		 	  echo "Added";
-		    
+		      header('header("refresh:1;url=deletep.php");');
 		 
 		     }
 		 	}

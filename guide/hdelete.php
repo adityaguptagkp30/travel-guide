@@ -30,7 +30,7 @@ if($total!=0)
              <td>'.$result["name"].'</td>
                <td>'.$result["address"].'</td>
                  <td>'.$result["contact"].'</td> 
-        <td><a href="hdeletep.php?id='.$result["name"].'">DELETE</a></td>
+        <td><a href="hdeletep.php?id='.$result["name"].'&& address='.$result["address"].'">DELETE</a></td>
      </tr>';
   
   

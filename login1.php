@@ -19,7 +19,7 @@
  	}
  	else
  	{
- 		$query="SELECT `email`,`password` FROM `users` WHERE `email`='$email' AND `password`='$password'";
+ 		$query="SELECT * FROM `users` WHERE `email`='$email' AND `password`='$password' AND verification='1'";
  		$result=mysqli_query($conn,$query);
  		if(mysqli_num_rows($result)>0)
  		{
@@ -43,16 +43,16 @@
  		}
  	}
  }
- if(isset($_SESSION['user']))
-    {
+ // if(isset($_SESSION['user']))
+ //    {
         
         
-        header('Location:userpanel.php');
-    }
-     if(isset($_SESSION['admin']))
-    {
+ //        header('Location:userpanel.php');
+ //    }
+ //     if(isset($_SESSION['admin']))
+ //    {
         
         
-        header('Location:guide/adminpanel.php');
-    }
+ //        header('Location:guide/adminpanel.php');
+ //    }
  ?>

@@ -8,6 +8,7 @@ if (isset($_SESSION['admin']))
   {
 
 	echo 'Welcome '.$_SESSION['admin'];
+	echo '<a href="update.php">add PLACE</a>';
 	$query="SELECT * FROM place ";
 $run_query=mysqli_query($conn,$query);
 $total=mysqli_num_rows($run_query);

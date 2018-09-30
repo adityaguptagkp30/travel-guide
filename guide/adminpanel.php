@@ -29,9 +29,9 @@
 </head>
 <body>
 	<div class="navbar">
-		<div class="title"><h3>GUIDE PANEL</h3> </div>
+		<center><<div class="title"><h1>GUIDE PANEL</h1> </div></center>
 
-		<div class="nav-link"><a href="#">
+		<center><div class="nav-link"><a href="#">
 			<?php if(isset($_SESSION['admin']))
 			  {
 				echo "<h1>Welcome: admin</h1>";
@@ -47,12 +47,14 @@
 		</a></div>
 		<div class="nav-link logIn"><a href="../logout1.php"><h3>Log Out</h3></a> </div>
 		<form action="adminpanel.php" method="post">
-		<a href="update.php">add PLACE</a>
-		<a href="deleteplace.php">delete PLACE</a>
+		<!-- <a href="update.php">add PLACE</a>
+		 --><a href="deleteplace.php"> PLACE</a>
 		<a href="edithotels.php">HOTELS</a>
 		<a href="edittemples.php">TEMPLES</a>
-		<a href="viewplaces.php">VIEW PLACES</a>
+		<a href="editmonuments.php">MONUMENTS</a>
+		<a href="editmalls.php">MALLS</a>
+		<!-- <a href="viewplaces.php">VIEW PLACES</a> -->
 		</form>
-	</div>
+	</div></center>
 </body>
 </html>

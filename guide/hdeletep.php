@@ -6,7 +6,8 @@ error_reporting(0);
 //
 $conn=mysqli_connect("localhost","root","","travelguide");
  $id = $_GET["id"];
- $query="DELETE FROM hotels where name='$id'";
+ $address=$_GET["address"];
+ $query="DELETE FROM hotels where name='$id' AND address='$address'";
 $data=mysqli_query($conn,$query);
 if($data)
 {   echo $id;

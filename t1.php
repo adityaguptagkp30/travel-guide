@@ -1,7 +1,7 @@
 <?php
 	 session_start();
 	 require('connection.php');
-	  include('place1.php');
+	//  include('place1.php');
 	 if(isset($_SESSION['user']))
 	 {
 	 			echo "<h1>Welcome: ".$_SESSION['user']."</h1>";
