@@ -25,7 +25,7 @@ echo"error:".mysqli_error($conn);
 }
 ?>
 <center><h1>*****travel guide for those who love travelling*****</h1></center>
-<center><h3>If already registered</h3><a href="admin.php"> <img src="images/login.jpg"></a></center>
+<center><h3>If already registered</h3><a href="admin.php"> <img src="C:\xampp\htdocs\test\images"></a></center>
 <div class="form">
 <form action="admin_registration.php" method="POST">
 <center>

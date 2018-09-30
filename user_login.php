@@ -10,7 +10,7 @@ error_reporting(0);
 if(isset($_POST['login'])){
 extract($_POST);
 $password=md5($_POST[password]);
-$query="select * from reg where email='$_POST[email]' AND password='$password'";
+$query="select * from reg where email='$_POST[email]' AND password='$password' AND verification='1'";
 $run_query=mysqli_query($conn,$query);
 if($run_query){
 	
@@ -22,7 +22,7 @@ header("Location:user_panel.php");
   }
 else
 {
-echo"<div class='alert alert-warning'><strong>warning!</strong>login not sucessfull...</div>";
+echo"<div class='alert alert-warning'><strong>warning!</strong>login not sucessfull... please note that account is verified</div>";
 }
 }
 }
