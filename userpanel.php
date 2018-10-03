@@ -9,6 +9,7 @@ session_start();
 if($_SESSION["email"]==true)
 {
 	echo"hello"." ".$_SESSION["email"];
+    
 }
 else{
 	header('location:login.php');
