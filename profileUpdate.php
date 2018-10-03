@@ -26,9 +26,9 @@ if($total!=0)
 	<th>EMAIL ID</th>
 	<th>HOMETOWN</th>
 	<th>GENDER</th>
-	<th>PASSWORD</th>
-	<th colspan=2>OPERATIONS</th>
-	</tr>
+    <th colspan=2>OPERATIONS</th>
+	<th>PROFILE PICTURE</th>
+        </tr>
 	
 <?php
 	while($result =mysqli_fetch_assoc($run_query))
@@ -39,9 +39,11 @@ if($total!=0)
 	          <td>".$result['email']."</td>
 	          <td>".$result['hometown']."</td>
 	          <td>".$result['gender']."</td>
-	          <td>".$result['password']."</td>
+            
 			  <td><a href='profileUpdate.php?firstname=$result[firstname]& email=$result[email]& hometown=$result[hometown]& gender=$result[gender]& password=$result[password]'>EDIT</a></td>
 			  <td><a href='deactivate.php?firstname=$result[firstname]& email=$result[email]& hometown=$result[hometown]& gender=$result[gender]& password=$result[password]'>DEACTIVATE</a></td>
+              <td><img src='userimages/.".$result['imageSource']."' height='100' width='100'</td>
+        
 	   </tr>";
 	
 	
@@ -59,10 +61,13 @@ else
     
 <form action="" method="post" enctype="multipart/form-data">
 firstname<input type ="text" name="firstname" value="<?php echo $_GET['firstname']; ?>"/> <br><br>
-        <input type="file" name="uploadfile" value=""/>
+     
 email<input type ="text" name="email" value="<?php  echo $_GET['email']; ?>"/> <br><br>
 hometown<input type ="text" name="hometown" value="<?php echo  $_GET['hometown']; ?>"/> <br><br>
 gender<input type ="text" name="gender" value="<?php echo $_GET['gender']; ?>"/> <br><br>
+    
+     profile picture update  <input type="file" name="uploadfile" value=""/><br><br><br>
+    
 <input type="submit" name="submit" value="UPDATE"/>
 </form>
 <?php
@@ -72,7 +77,12 @@ if($_POST['submit'])
 	$email=$_POST['email'];
 	$hometown=$_POST['hometown'];
 	$gender=$_POST['gender'];
-	$query="update reg set firstname='$firstname',hometown='$hometown',gender='$gender' where email='$email'";
+    $filename= $_FILES["uploadfile"]["name"];
+$tempname=$_FILES["uploadfile"]["tmp_name"];
+$folder="userimages/.$filename";
+move_uploaded_file($tempname,$folder);
+echo "<img src='$folder' height='100' width='100'/>";
+	$query="update reg set firstname='$firstname',hometown='$hometown',gender='$gender',imageSource='$filename' where email='$email'";
 	$data=mysqli_query($conn, $query);
 	if($data)
 	{
