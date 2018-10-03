@@ -22,16 +22,20 @@
           	$correct_response='';
           	if(empty($name) || empty($email) || empty($password))
           	{
-          		$response='Fields cant be empty';
+          		$response='Fields cannot be empty';
           	}
   	else if(!preg_match("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^",$email))
 { 
-$response='Invalid email';
+$response='Please enter a valid email';
 }            
       
-    else if ( preg_match('/\s/',$name) ){
+else if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $response = "Only letters and white space allowed"; 
+    }
 
-                $response='Your username must not contain any whitespace';}
+                    else if ( preg_match('/\s/',$password) ){
+
+                $response='Your password must not contain any whitespace';}
     else
       {
   	   $query="SELECT `email` FROM `users` WHERE `email`='$email'";
@@ -101,9 +105,10 @@ if(!$mail->send()) {
 
 
                     $correct_response = 'Registration successfull...';
+                    header("refresh:2;url=tlogin.php");
+
                     // to take to login page within 2 sec
-}                    //header("refresh:2;url=tlogin.php");
-                
+}                    //                
               
                 else
                 {

@@ -29,12 +29,12 @@
 </head>
 <body>
 	<div class="navbar">
-		<center><<div class="title"><h1>GUIDE PANEL</h1> </div></center>
+		<center><div class="title"><h1>GUIDE PANEL</h1> </div></center>
 
 		<center><div class="nav-link"><a href="#">
 			<?php if(isset($_SESSION['admin']))
 			  {
-				echo "<h1>Welcome: admin</h1>";
+				echo "<h1>Welcome: Guide</h1>";
               }
                // <input type="text" placeholder="place" >
               
@@ -49,10 +49,10 @@
 		<form action="adminpanel.php" method="post">
 		<!-- <a href="update.php">add PLACE</a>
 		 --><a href="deleteplace.php"> PLACE</a>
-		<a href="edithotels.php">HOTELS</a>
-		<a href="edittemples.php">TEMPLES</a>
-		<a href="editmonuments.php">MONUMENTS</a>
-		<a href="editmalls.php">MALLS</a>
+		<a href="hdelete.php">HOTELS</a>
+		<a href="tdelete.php">TEMPLES</a>
+		<a href="mondelete.php">MONUMENTS</a>
+		<a href="malldelete.php">MALLS</a>
 		<!-- <a href="viewplaces.php">VIEW PLACES</a> -->
 		</form>
 	</div></center>

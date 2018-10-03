@@ -6,10 +6,12 @@
 		if (isset($_SESSION['admin'])) 
 		{
 		    
-		  	echo "WELCOME GUIDE";
+		  	
+		  	echo '<center><a href="update.php">add PLACE</a></center>';
+	echo '<center><a href="deleteplace.php">Delete PLACE</a></center>';
 		  	echo'<form action="update.php" method="post" >';
-		    echo '<input type="text" name="place" placeholder="place" required="">';
-
+		    echo '<center><input type="text" name="place" placeholder="place" required=""></center>';
+              
 		    echo'</form>';
 		    if($_SERVER['REQUEST_METHOD']=='POST')
 		    {
@@ -31,8 +33,8 @@
 		      $query="INSERT INTO place (place) 
 		      VALUES ('$place');";
 		 	  $result=mysqli_query($conn,$query);
-		 	  echo "Added";
-		      header('header("refresh:1;url=deletep.php");');
+		 	  echo "<center>Added</center>";
+		      header("refresh:2;url=deleteplace.php");
 		 
 		     }
 		 	}

@@ -25,10 +25,11 @@
         {
      //      $id=$row["name"];
     	// $a=$row["image"];
-    	echo '<div style="width:100%;height:200px;"><a style="height:200px;width:40%;float:left;border:2px solid black;margin:2%;" href="monumentinfo.php?id=' . $row["image"] . '"><div style="height:200px;width:100%;float:left;border:2px solid black;margin:2%;">';
-        echo  " <h1>  " . $row["name"]. "</h1><br><h3> " . $row["address"]. "</h3><br><br>";
+    	echo '<div style="width:100%;height:300px;"><a style="height:300px;width:48%;float:left;border:2px solid black;" href="monumentinfo.php?id=' . $row["image"] . '"><div style="height:300px;width:100%;float:left;border:2px solid black;">';
+        echo  " <center><h1>  " . $row["name"]. "</h1></center><br><br>";
        $image = $row['image']; 
         // echo $a;
+       echo '<img style="position:relative;float:right;" src="guide/uploads/'.$image.'" width="100%" height="60%" />';
         // echo '<img style="position:relative;" src="guide/uploads/'.$a.'" width="100%" height="200px" />';
         echo '</div></a></div>';
         }

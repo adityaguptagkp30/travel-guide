@@ -13,7 +13,6 @@
 		
 
 	 $a=$_SESSION['id'];
-	 echo "WELCOME";
 	 $sql = "SELECT * FROM temples where id=$a";
 	 $result = mysqli_query($conn, $sql);
 
@@ -22,14 +21,13 @@
 	    // output data of each row
 	     while($row = mysqli_fetch_assoc($result)) 
         {
-          $id=$row["image"];
-    	$a=$row["image"];
-    	echo '<a style="height:200px;width:40%;float:left;border:2px solid black;margin:2%;" href="tinfo.php?id=' . $id . '"><div style="height:200px;width:100%;float:left;border:2px solid black;margin:2%;">';
-        echo  " <h1>  " . $row["name"]. "</h1><br><h3> " . $row["address"]. "</h3><br><br>";
+          echo '<div style="width:100%;height:300px;"><a style="height:300px;width:48%;float:left;border:2px solid black;" href="tinfo.php?id=' . $row["image"] . '"><div style="height:300px;width:100%;float:left;border:2px solid black;">';
+        echo  " <center><h1>  " . $row["name"]. "</h1></center><br><br>";
        $image = $row['image']; 
         // echo $a;
+       echo '<img style="position:relative;float:right;" src="guide/uploads/'.$image.'" width="100%" height="60%" />';
         // echo '<img style="position:relative;" src="guide/uploads/'.$a.'" width="100%" height="200px" />';
-        echo '</div></a>';
+        echo '</div></a></div>';
         }
 	} 
 	else 

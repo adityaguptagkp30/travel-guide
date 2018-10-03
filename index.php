@@ -190,11 +190,11 @@ a {
 		<?php
 					if(!empty($response)){
 						echo "<div class='form-group'><span>".$response."</span> </div><hr>";
-                           header("refresh:1;url=index.php");
+                           header("refresh:2;url=index.php");
 					}
 					if(!empty($correct_response)){
 						echo "<div class='formn-group'><span style='color:green;'>".$correct_response."</span></div><hr>";
-					      header("refresh:1;url=index.php");
+					      //header("refresh:1;url=index.php");
                     }
 				?>
 				 

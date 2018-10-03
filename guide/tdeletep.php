@@ -10,11 +10,11 @@ $conn=mysqli_connect("localhost","root","","travelguide");
 $data=mysqli_query($conn,$query);
 if($data)
 {   echo $id;
-	echo "<font color='green'>record deleted sucessfully";
+	echo "<center><font color='green'>record deleted sucessfully</center>";
 	header("refresh:1;url=tdelete.php");
 }
 else
 {
-	echo"<font color='red'>sorry,delete process failed";
+	echo"<center><font color='red'>sorry,delete process failed</center>";
 }
 ?>

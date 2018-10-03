@@ -1,7 +1,7 @@
 <?php
    session_start();
     require('connection.php');
-    
+    error_reporting(0);
     
     ?>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 	}
 		
 	body{
-		background-image: url(newimg.png);
+		background-image: url(ALBATROSS/newimg.png);
 		background-size: cover;	
 		}
 
@@ -57,7 +57,7 @@
 		{
 			 float: left;
 			 width: 10%;
-			 padding: 20px;
+			 padding: 13px;
 			 background: #129490;
 				  color: white;
 				  font-size: 17px;
@@ -90,10 +90,10 @@
 	}
 
 	.leftmenu h1{
-	padding-left: 70px;
+	padding-left: 10px;
 	font-weight: bold;
 	color: white;
-	font-size: 30px;
+	font-size: 25px;
 	font-family: 'Cedarville Cursive', cursive;
 	}
 	
@@ -143,14 +143,20 @@
 
 	<nav class="menu">
 		<div class="leftmenu">
-			<h1>Welcome, <?php if(isset($_SESSION['user'])){
-				echo " ".$_SESSION['user']."";
+			<h1>Welcome, <?php 
+           require('connection.php');
+           session_start();
+
+			if(isset($_SESSION['user'])){
+				
+				echo $_SESSION['user'];
 
 			}
 			  else
 			  {
 			  	header('Location:index.php');
 			  }
+			
 			?></h1>			
 		</div>
 
@@ -159,7 +165,7 @@
 				<ul>
 					<li id="firstlist">HOME</li>
 					<li><a href="#Explore">EXPLORE</a></li>
-					<li><a href="profile.php?email="<?php echo $_SESSION['user']; ?>"">YOUR PPOFILE</a></li>
+					<li><a href="profileUpdate.php?email="<?php echo $_SESSION['user']; ?>"">YOUR PPOFILE</a></li>
 					<li><a href="logout1.php">LOGOUT</a></li>
 				</ul>
 	</div>
@@ -173,7 +179,8 @@
    
 <form action="w.php" method="post" class="example">
 		<input type="text" placeholder="place" name="place">
-		<input type="submit" name="SUBBMIT" value="SUBMIT">
+		<button type="submit" name="SUBBMIT" value="SUBMIT">SUBMIT
+		</button>
 		</form>
 
 

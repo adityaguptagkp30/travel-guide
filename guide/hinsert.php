@@ -2,16 +2,16 @@
 require('edithotels.php');
   if (isset($_SESSION['admin'])) 
   {
-  		    echo'<form action="hinsert.php" method="post" enctype="multipart/form-data">';
+  		    echo'<center><form action="hinsert.php" method="post" enctype="multipart/form-data">';
           echo '<table>';
            echo '<tr><td><input type="text" name="place" placeholder="place" ></td></tr>';
             echo '<tr><td><input type="text" name="name" placeholder="name" ></td></tr>';
-            echo '<tr><td><input type="text" name="address" placeholder="address" required=""></td></tr>';
-            echo '<tr><td><input type="text" name="contact" placeholder="contact" required=""></td></tr>';
+            echo '<tr><td><input type="text" name="address" placeholder="address" ></td></tr>';
+            echo '<tr><td><input type="text" name="contact" placeholder="contact" ></td></tr>';
             echo '<tr><td><textarea name="about" placeholder="ABOUT" rows="10" cols="30"></textarea></td></tr>';
             echo '<tr><td> <input type="file" name="file" ></td></tr>';
             echo '<tr><td><input type="submit" name="submit" value="submit"></td></tr></table>';
-            echo'</form>';
+            echo'</form></center>';
             if($_SERVER['REQUEST_METHOD']=='POST')
             {
               $place=$_POST['place'];
@@ -21,14 +21,17 @@ require('edithotels.php');
               $about=$_POST['about']; 
                 $name=$_FILES['file']['name'];
                $tmp_name=$_FILES['file']['tmp_name'];
-               if(empty($place)||empty($name1))
+               if(empty($place)||empty($name1)||empty($address)||empty($contact)||empty($about)||empty($name))
                {
-                $resp="please fill all fields";
+                $resp="<font color='red'><center>Please fill in all fields</center>";
                 echo $resp;
                }
+              else if ( preg_match('/\s/',$place)||preg_match('/\s/',$name1)||preg_match('/\s/',$address)||preg_match('/\s/',$contact)||preg_match('/\s/',$about) )
+              {
+                echo "<center>Spaces are not allowed</center>";
+              }
 else
-{             $resp="ok";
-             echo $resp;
+{          
               $sql = "SELECT `id` FROM `place` where `place`='$place'";
               $resul = mysqli_query($conn, $sql);
                        
@@ -45,7 +48,7 @@ if (mysqli_num_rows($resul) > 0)
                 // output data of each row
                   if(mysqli_num_rows($result)>0)
                   {
-                  echo "ALREADY EXIST";
+                  echo "<center>ALREADY EXIST</center>";
                   }
                   else
                   {
@@ -56,7 +59,7 @@ if (mysqli_num_rows($resul) > 0)
                           if(move_uploaded_file($tmp_name,$location.$name))
                        { 
       
-                            echo "UPLOADEd";
+                            echo "<font color='green'><center>INSERTED</center>";
                           }
                   }
              
@@ -82,7 +85,8 @@ if (mysqli_num_rows($resul) > 0)
                           if(move_uploaded_file($tmp_name,$location.$name))
                        { 
       
-                            echo "UPLOADEd";
+                            
+                            echo "<font color='green'><center>INSERTED</center>";
                           }
                
 

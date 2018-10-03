@@ -4,9 +4,9 @@ require('../connection.php');
 require('adminpanel.php');
   if (isset($_SESSION['admin'])) {
     
-  	echo "EDIT TEMPLES";
+  	echo "<center>EDIT TEMPLES";
   	echo'<a href=tinsert.php>ADD TEMPLES</a>';
-  	echo'<a href=tdelete.php>DELETE TEMPLE</a>';
+  	echo'<a href=tdelete.php>DELETE TEMPLE</a></center>';
 }
 else
 { header('Location:../index.php');

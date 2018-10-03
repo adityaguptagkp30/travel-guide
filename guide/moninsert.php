@@ -3,7 +3,7 @@ require('editmonuments.php');
   if (isset($_SESSION['admin'])) 
   {
   		    echo'<form action="moninsert.php" method="post" enctype="multipart/form-data">';
-          echo '<table>';
+          echo '<table style="margin-left:auto;margin-right:auto;">';
            echo '<tr><td><input type="text" name="place" placeholder="place" required=""></td></tr>';
             echo '<tr><td><input type="text" name="name" placeholder="name" required=""></td></tr>';
             echo '<tr><td><input type="text" name="address" placeholder="address" required=""></td></tr>';

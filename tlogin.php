@@ -137,7 +137,7 @@ a {
 <?php        if (isset($_SESSION['user'])) {
     header('Location:userpanel.php');
 }              if (isset($_SESSION['admin'])) {
-    header('Location:userpanel.php');
+    header('Location:guide/adminpanel.php');
 }
 				if(!empty($response))
 				{
@@ -156,7 +156,17 @@ a {
     <!-- <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
 
     <input type="submit" name="login" class="loginbtn" value="Login">
-    <button class="registerbtn"><a href="index.php">New to ALBATROSS? Sign Up.</a></button>
+
+<!--     <button class="registerbtn"><a href="index.php">New to ALBATROSS? Sign Up.</a></button> -->
+    <cenetr><a class="registerbtn" href="index.php" style="position: relative;width: 90%;
+    padding: 16px 20px;
+    margin-left: 0px;
+    margin-top: 4px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: inline-block;"> New to ALBATROSS? Sign Up.</a></cenetr>
+  </div>
   </div>
 </form>
 </body>

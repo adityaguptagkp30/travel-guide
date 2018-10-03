@@ -6,14 +6,13 @@ require('editmonuments.php');
 if (isset($_SESSION['admin']))
   {
 
-  echo 'Welcome '.$_SESSION['admin'];
   $query="SELECT * FROM monuments ";
 $run_query=mysqli_query($conn,$query);
 $total=mysqli_num_rows($run_query);
 if($total!=0)
 {
   ?>
-  <table>
+  <table style="margin-left:auto; margin-right:auto;">
   <tr>
   <th>place id</th>
   <th>name</th>

@@ -14,9 +14,9 @@ $data=mysqli_query($conn,$query);
  $query="DELETE FROM place WHERE id='$id'";
 $data=mysqli_query($conn,$query);
 if($data)
-{   echo $id;
-	echo "<font color='green'>record deleted sucessfully";
- header("refresh:1;url=deleteplace.php");
+{  
+	echo "<font color='green'><center>record deleted sucessfully</center>";
+ header("refresh:2;url=deleteplace.php");
 }
 else
 {

@@ -7,15 +7,16 @@ require('adminpanel.php');
 if (isset($_SESSION['admin']))
   {
 
-	echo 'Welcome '.$_SESSION['admin'];
-	echo '<a href="update.php">add PLACE</a>';
+	
+	echo '<center><a href="update.php">add PLACE</a></center>';
+	echo '<center><a href="deleteplace.php">Delete PLACE</a></center>';
 	$query="SELECT * FROM place ";
 $run_query=mysqli_query($conn,$query);
 $total=mysqli_num_rows($run_query);
 if($total!=0)
 {
 	?>
-	<table>
+	<table style="margin-left: auto;margin-right: auto;">
 	<tr>
 	<th>place</th>
 	<th colspan=2></th>

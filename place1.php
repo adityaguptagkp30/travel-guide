@@ -31,10 +31,10 @@
   }
 
   .leftmenu h1{
-  padding-left: 70px;
+  padding-left: 10px;
   font-weight: bold;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Cedarville Cursive', cursive;
   }
   
@@ -91,8 +91,8 @@
     margin-top: 100px;
     margin-right: 40px;
     border: 1px solid #ccc;
-    float: justify;
-    width: 180px;
+    float: left;
+    width: 250px;
   }
 
 
@@ -153,7 +153,7 @@
    }
    else if(isset($_SESSION['id']))
    { echo '<br><br>';
-  echo '<center><h1>';   echo "WELCOME TO place ";
+  echo '<center><h1>';   echo "WELCOME TO ";
      //echo $_SESSION['id'];
       echo $_SESSION['place']; echo'</h1></center>'; 
       echo'<br><br>';
@@ -161,29 +161,29 @@
 
  // header('Location:userpanel.php');
 	?> 
-<center><div class="gallery">
-      <a href="h1.php">Hotels
-      <img src="5terre.jpg" alt="5Terre" width="600" height="400">
+<div class="gallery">
+      <a href="h1.php">
+      <img src="icon/hotelicon.jpeg" alt="5Terre" width="600px" height="400px" style="height: 160px;">
       </a>
   
-      <div class="desc">Add a description of the image here</div>
+      <div class="desc">CLICK HERE TO VIEW HOTELS</div>
   </div>
 
   <div class="gallery">
-      <a href="t1.php">Temples      <img src="img_forest.jpg" alt="Forest" width="600" height="400">
+      <a href="t1.php">      <img src="icon/templeicon.jpeg" alt="Forest" width="600px" height="400px" style="height: 160px;">
       </a>
-    <div class="desc">Add a description of the image here</div>
+    <div class="desc">CLICK HERE TO VIEW TEMPLES</div>
   </div>
 <div class="gallery">
-      <a href="monument1.php">Monuments      <img src="img_forest.jpg" alt="Forest" width="600" height="400">
+      <a href="monument1.php">  <img src="icon/monumenticon.jpeg" alt="Forest" width="600px" height="200px" style="height: 160px;">
       </a>
-    <div class="desc">Add a description of the image here</div>
+    <div class="desc">CLICK HERE TO VIEW MONUMENTS</div>
   </div>
   <div class="gallery">
-      <a href="mall1.php">Malls      <img src="img_forest.jpg" alt="Forest" width="600" height="400">
+      <a href="mall1.php">  <img src="icon/mallicon.jpeg" alt="Forest" width="600px" height="400px" style="height: 160px;">
       </a>
-    <div class="desc">Add a description of the image here</div>
+    <div class="desc">CLICK HERE TO VIEW MALLS</div>
   </div>
-</center>
+
 </body>
 </html>
