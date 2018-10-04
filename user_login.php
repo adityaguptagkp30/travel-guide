@@ -18,6 +18,18 @@ if(mysqli_num_rows($run_query)>0){
 	
 $_SESSION["email"]=$email;
 $_SESSION["password"]=$password;
+    
+function hit_count()
+{
+	$filename='count.txt';
+    $handle=fopen($filename,'r');
+	$current=fread($handle,filesize($filename));
+    $handle=fopen($filename,'w');
+	$current=$current+1;
+	fwrite($handle,$current);
+fclose($handle);
+	}
+    hit_count();
 header("Location:user_panel.php");
   }
 else
