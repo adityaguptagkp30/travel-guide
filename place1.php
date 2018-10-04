@@ -89,10 +89,10 @@
 
   div.gallery {
     margin-top: 100px;
-    margin-right: 40px;
+    margin-left: 40px;
     border: 1px solid #ccc;
-    float: left;
-    width: 250px;
+    float:left;
+    width: 270px;
   }
 
 
@@ -136,8 +136,8 @@
   <div class="rightmenu">
         <ul>
           <li id="firstlist"><a href="userpanel.php">HOME</a></li>
-          <li><a href="#Explore">EXPLORE</a></li>
-          <li><a href="#Yourpl">YOUR PLACES</a></li>
+         <li><a href="comment.php">ADD COMMENTS</a></li>
+          <li><a href="profileUpdate.php?email="<?php echo $_SESSION['user']; ?>"">YOUR PROFILE</a></li>
           <li><a href="logout1.php">LOGOUT</a></li>
         </ul>
   </div>

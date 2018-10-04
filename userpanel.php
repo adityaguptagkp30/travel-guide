@@ -164,15 +164,27 @@
 	<div class="rightmenu">
 				<ul>
 					<li id="firstlist">HOME</li>
-					<li><a href="#Explore">EXPLORE</a></li>
-					<li><a href="profileUpdate.php?email="<?php echo $_SESSION['user']; ?>"">YOUR PPOFILE</a></li>
+					<li><a href="comment.php">COMMENT</a></li>
+					<li><a href="profileUpdate.php?email="<?php echo $_SESSION['user']; ?>"">YOUR PROFILE</a></li>
 					<li><a href="logout1.php">LOGOUT</a></li>
 				</ul>
 	</div>
 
 	</nav>
-
 	<div class='content'>
+		<?php  function show_count()
+{
+	$filename='count.txt';
+	$handle=fopen($filename,'r');
+	$current=fread($handle,filesize($filename));
+	echo "<font color='black'>" .$current." users have logged in to our website uptill now.";
+	fclose($handle);
+}
+    
+    show_count();
+?>
+		    
+
 	<h4>Where do you want to fly with</h4>
 	<h1>ALBATROSS?</h1>
 	</div>

@@ -1,5 +1,6 @@
 <?php 
 require('editmonuments.php');
+error_reporting(0);
   if (isset($_SESSION['admin'])) 
   {
   		    echo'<form action="moninsert.php" method="post" enctype="multipart/form-data">';
@@ -21,6 +22,14 @@ require('editmonuments.php');
               $about=$_POST['about']; 
                 $name=$_FILES['file']['name'];
                $tmp_name=$_FILES['file']['tmp_name'];
+                if(empty($place)||empty($name1)||empty($address)||empty($contact)||empty($about)||empty($name))
+               {
+                $resp="<font color='red'><center>Please fill in all fields</center>";
+                echo $resp;
+               }
+           
+else
+{
               $sql = "SELECT `id` FROM `monuments` where `place`='$place'";
               $resul = mysqli_query($conn, $sql);
 
@@ -38,7 +47,7 @@ if (mysqli_num_rows($resul) > 0)
                 // output data of each row
                   if(mysqli_num_rows($result)>0)
                   {
-                  echo "ALREADY EXIST";
+                  echo "<center>ALREADY EXIST</center>";
                   }
                   else
                   {
@@ -49,7 +58,7 @@ if (mysqli_num_rows($resul) > 0)
                           if(move_uploaded_file($tmp_name,$location.$name))
                        { 
       
-                            echo "UPLOADEd";
+                            echo "<font color='green'><center>INSERTED</center>";
                           }
                   }
              
@@ -75,13 +84,13 @@ if (mysqli_num_rows($resul) > 0)
                           if(move_uploaded_file($tmp_name,$location.$name))
                        { 
       
-                            echo "UPLOADEd";
+                           echo "<font color='green'><center>INSERTED</center>";
                           }
                
 
              
                 }
-
+}
                      }   }
         else
         {

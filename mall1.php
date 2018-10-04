@@ -1,5 +1,6 @@
 <?php
   session_start();
+  error_reporting(0);
   require('connection.php');
   //include('place1.php');
   //include('info.php');
@@ -37,7 +38,7 @@
     } 
     else 
     {
-    echo "0 results";
+    echo "<center><h2><font color='red'>OOPs No Malls Found</h2></center>";
     }
 
 

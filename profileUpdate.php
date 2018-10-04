@@ -26,6 +26,7 @@ if($total!=0)
 	<th>EMAIL ID</th>
 	<th>PASSWORD</th>
 	<th colspan=2>OPERATIONS</th>
+	<th>PROFILE PIC</th>
 	</tr>
 	
 <?php
@@ -38,6 +39,7 @@ if($total!=0)
 	          <td>".$result['password']."</td>
 			  <td><a href='profileUpdate.php?name=$result[name]& email=$result[email]& password=$result[password]'>EDIT</a></td>
 			  <td><a href='deactivate.php?name=$result[name]& email=$result[email]& password=$result[password]'>DEACTIVATE</a></td>
+	          <td><img src='icon/.".$result['imageSource']."' height='100' width='100'></td>
 	   </tr>";
 	
 	
@@ -53,17 +55,24 @@ else
     
     
     
-<form action="" method="GET">
+<form action="" method="post" enctype="multipart/form-data">
 firstname<input type ="text" name="name" value="<?php echo $_GET['name']; ?>"/> <br><br>
 email<input type ="text" name="email" value="<?php  echo $_GET['email']; ?>"/> <br><br>
+profile picture update  <input type="file" name="uploadfile" value=""/><br><br><br>
 <input type="submit" name="submit" value="UPDATE"/>
 </form>
 <?php
-if($_GET['submit'])
+if($_POST['submit'])
 {
-	$name=$_GET['name'];
-	$email=$_GET['email'];
-	$query="UPDATE users SET name='$name' WHERE email='$email'";
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+	   $filename= $_FILES["uploadfile"]["name"];
+$tempname=$_FILES["uploadfile"]["tmp_name"];
+$folder="icon/.$filename";
+move_uploaded_file($tempname,$folder);
+echo "<br><img src='$folder' height='100' width='100'/><br><br>";
+
+	$query="UPDATE users SET name='$name',imageSource='$filename' WHERE email='$email'";
 	$data=mysqli_query($conn, $query);
 	if($data)
 	{

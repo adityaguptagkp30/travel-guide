@@ -1,5 +1,6 @@
 <?php
  require('login1.php');
+ error_reporting(0);
  ?>
 <!DOCTYPE html>
 <html>
@@ -150,14 +151,7 @@ a {
     <label for="password"><b>Password</b></label><br>
     <input type="password" placeholder="Enter Password" name="password" required><br>
 
-    <!-- <label for="psw-reenter"><b>Re-enter Password</b></label><br>
-    <input type="password" placeholder="Re-enter Password" name="psw-reenter" required>
-    <hr> -->
-    <!-- <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
-
     <input type="submit" name="login" class="loginbtn" value="Login">
-
-<!--     <button class="registerbtn"><a href="index.php">New to ALBATROSS? Sign Up.</a></button> -->
     <cenetr><a class="registerbtn" href="index.php" style="position: relative;width: 90%;
     padding: 16px 20px;
     margin-left: 0px;

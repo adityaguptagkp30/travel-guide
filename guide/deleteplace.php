@@ -3,7 +3,7 @@
 // session_start();
 require('../connection.php');
 require('adminpanel.php');
-
+error_reporting(0);
 if (isset($_SESSION['admin']))
   {
 

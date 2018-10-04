@@ -1,5 +1,6 @@
 <?php
    session_start();
+   error_reporting(0);
     require('connection.php');
      require('place.php');
     ?>
@@ -158,7 +159,7 @@
 	<div class="rightmenu">
 				<ul>
 					<li id="firstlist">HOME</li>
-					<li><a href="#Explore">EXPLORE</a></li>
+					<li><a href="comment.php">COMMENT</a></li>
 					<li><a href="profile.php">YOUR PLACES</a></li>
 					<li><a href="logout1.php">LOGOUT</a></li>
 				</ul>

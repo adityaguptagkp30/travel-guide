@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
  include_once('connection.php');
  include_once('place1.php');
  $place=$_POST['place'];

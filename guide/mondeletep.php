@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+error_reporting(0);
 require('mondelete.php');
 error_reporting(0);
 //

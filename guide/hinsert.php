@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0);
 require('edithotels.php');
   if (isset($_SESSION['admin'])) 
   {
@@ -26,10 +27,7 @@ require('edithotels.php');
                 $resp="<font color='red'><center>Please fill in all fields</center>";
                 echo $resp;
                }
-              else if ( preg_match('/\s/',$place)||preg_match('/\s/',$name1)||preg_match('/\s/',$address)||preg_match('/\s/',$contact)||preg_match('/\s/',$about) )
-              {
-                echo "<center>Spaces are not allowed</center>";
-              }
+            
 else
 {          
               $sql = "SELECT `id` FROM `place` where `place`='$place'";

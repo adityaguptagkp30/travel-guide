@@ -1,5 +1,6 @@
 <?php
 // session_start();
+error_reporting(0);
   require('register.php');
   if(isset($_SESSION['user']))
     {
@@ -190,7 +191,7 @@ a {
 		<?php
 					if(!empty($response)){
 						echo "<div class='form-group'><span>".$response."</span> </div><hr>";
-                           header("refresh:2;url=index.php");
+                           header("refresh:3;url=index.php");
 					}
 					if(!empty($correct_response)){
 						echo "<div class='formn-group'><span style='color:green;'>".$correct_response."</span></div><hr>";
@@ -206,12 +207,7 @@ a {
 
     <label for="password"><b>Password</b></label><br>
     <input type="password" placeholder="password" name="password" ><br>
-
-    <!-- <label for="psw-reenter"><b>Re-enter Password</b></label><br>
-    <input type="password" placeholder="Re-enter Password" name="psw-reenter" required> -->
     <hr>
-    <!-- <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
-
     <input type="submit" class="registerbtn" value="Register"></button>
     <cenetr><a class="registerbtn" href="tlogin.php" style="position: relative;width: 90%;
     padding: 16px 20px;
@@ -222,20 +218,6 @@ a {
     color: white;
     display: inline-block;"> Have an account already? LOGIN</a></cenetr>
   </div>
-  
-		<!-- <div class="form-group">
-			<label class="form-label">Name:</label>
-			<input class="form-control" id="name" placeholder="Name    " name="name">
-		</div>
-		<div class="form-group">
-			<label class="form-label">Email:</label>
-			<input type="email" class="form-control" id="email" placeholder="Email   " name="email">
-		</div>
-		<div class="form-group">
-			<label class="form-label">Password:</label>
-			<input type="password" class="form-control" id="password" placeholder="password" name="password">
-		</div>
-		<input class="btn" type="submit" value="Register"> -->
 	</form>
 
 
