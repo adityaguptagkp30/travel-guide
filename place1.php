@@ -136,7 +136,7 @@
   <div class="rightmenu">
         <ul>
           <li id="firstlist"><a href="userpanel.php">HOME</a></li>
-         <li><a href="comment.php">ADD COMMENTS</a></li>
+         <li><a href="comment.php">REVIEW</a></li>
           <li><a href="profileUpdate.php?email="<?php echo $_SESSION['user']; ?>"">YOUR PROFILE</a></li>
           <li><a href="logout1.php">LOGOUT</a></li>
         </ul>

@@ -105,7 +105,7 @@ if(!$mail->send()) {
 
 
                     $correct_response = 'Registration successfull...';
-                    header("refresh:2;url=tlogin.php");
+                    header("refresh:3;url=tlogin.php");
 
                     // to take to login page within 2 sec
 }                    //                

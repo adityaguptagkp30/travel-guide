@@ -159,7 +159,7 @@
 	<div class="rightmenu">
 				<ul>
 					<li id="firstlist">HOME</li>
-					<li><a href="comment.php">COMMENT</a></li>
+					<li><a href="comment.php">REVIEW</a></li>
 					<li><a href="profile.php">YOUR PLACES</a></li>
 					<li><a href="logout1.php">LOGOUT</a></li>
 				</ul>

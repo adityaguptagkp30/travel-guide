@@ -59,6 +59,7 @@ if (mysqli_num_rows($resul) > 0)
                        { 
       
                             echo "<font color='green'><center>INSERTED</center>";
+                            header("refresh:2;url=tdelete.php");
                           }
                   }
              
@@ -87,6 +88,7 @@ if (mysqli_num_rows($resul) > 0)
                        { 
       
                           echo "<font color='green'><center>INSERTED</center>";
+                           header("refresh:2;url=tdelete.php");
                           }
 
              

@@ -123,6 +123,8 @@
 	}
 
 	.rightmenu ul li a{
+		padding-top: 30px;
+		padding-bottom: 30px;
 	text-decoration: none;
 	color: white;
 	}
@@ -164,7 +166,7 @@
 	<div class="rightmenu">
 				<ul>
 					<li id="firstlist">HOME</li>
-					<li><a href="comment.php">COMMENT</a></li>
+					<li><a href="comment.php">REVIEW</a></li>
 					<li><a href="profileUpdate.php?email="<?php echo $_SESSION['user']; ?>"">YOUR PROFILE</a></li>
 					<li><a href="logout1.php">LOGOUT</a></li>
 				</ul>
