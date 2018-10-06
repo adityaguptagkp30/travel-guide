@@ -195,7 +195,7 @@ a {
 					}
 					if(!empty($correct_response)){
 						echo "<div class='formn-group'><span style='color:green;'>".$correct_response."</span></div><hr>";
-					      //header("refresh:1;url=index.php");
+					      header("refresh:3;url=index.php");
                     }
 				?>
 				 

@@ -3,15 +3,15 @@ require('editmonuments.php');
 error_reporting(0);
   if (isset($_SESSION['admin'])) 
   {
-  		    echo'<form action="moninsert.php" method="post" enctype="multipart/form-data">';
-          echo '<table style="margin-left:auto;margin-right:auto;">';
-           echo '<tr><td><input type="text" name="place" placeholder="place" required=""></td></tr>';
-            echo '<tr><td><input type="text" name="name" placeholder="name" required=""></td></tr>';
-            echo '<tr><td><input type="text" name="address" placeholder="address" required=""></td></tr>';
-            echo '<tr><td><input type="text" name="contact" placeholder="contact" required=""></td></tr>';
-            echo '<tr><td><textarea name="about" placeholder="ABOUT" rows="10" cols="30"></textarea></td></tr>';
-            echo '<tr><td> <input type="file" name="file" ></td></tr>';
-            echo '<tr><td><input type="submit" name="submit" value="submit"></td></tr></table>';
+  		    echo'<form action="hinsert.php" method="post" enctype="multipart/form-data">';
+          echo '<table style="border:2px solid grey;border-radius:10px;background-color:#c6e9f2;">';
+           echo '<tr><td>CITY</td><td><input type="text" name="place" placeholder="place" ></td></tr>';
+            echo '<tr><td>NAME</td><td><input type="text" name="name" placeholder="name" ></td></tr>';
+            echo '<tr><td>ADDRESS</td><td><input type="text" name="address" placeholder="address" ></td></tr>';
+            echo '<tr><td>CONTACT</td><td><input type="text" name="contact" placeholder="contact" ></td></tr>';
+            echo '<tr><td>ABOUT</td><td><textarea name="about" placeholder="ABOUT" rows="10" cols="30"></textarea></td></tr>';
+            echo '<tr><td></td><td> <input type="file" name="file" ></td></tr>';
+            echo '<tr><td></td><td><input type="submit" name="submit" value="submit"></td></tr></table>';
             echo'</form>';
             if($_SERVER['REQUEST_METHOD']=='POST')
             {

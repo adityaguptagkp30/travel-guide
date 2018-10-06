@@ -21,11 +21,12 @@ $conn=mysqli_connect("localhost","root","","travelguide");
       $sql="SELECT * FROM comments WHERE id='$id'";
       $result=mysqli_query($conn, $sql);
       if (mysqli_num_rows($result) > 0)  
-      {
+      { $i=1;
       while($row =mysqli_fetch_assoc($result))
-{	echo "<br>";
-	echo $row['comment'];
-
+{	echo '<br><div style="margin-left:100px;">';
+      echo $i.'.';
+	echo $row['comment'].'</div>';
+         $i++;
 	   }      }
 	   else
 	   {

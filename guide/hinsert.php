@@ -3,16 +3,16 @@ error_reporting(0);
 require('edithotels.php');
   if (isset($_SESSION['admin'])) 
   {
-  		    echo'<center><form action="hinsert.php" method="post" enctype="multipart/form-data">';
-          echo '<table>';
-           echo '<tr><td><input type="text" name="place" placeholder="place" ></td></tr>';
-            echo '<tr><td><input type="text" name="name" placeholder="name" ></td></tr>';
-            echo '<tr><td><input type="text" name="address" placeholder="address" ></td></tr>';
-            echo '<tr><td><input type="text" name="contact" placeholder="contact" ></td></tr>';
-            echo '<tr><td><textarea name="about" placeholder="ABOUT" rows="10" cols="30"></textarea></td></tr>';
-            echo '<tr><td> <input type="file" name="file" ></td></tr>';
-            echo '<tr><td><input type="submit" name="submit" value="submit"></td></tr></table>';
-            echo'</form></center>';
+  		    echo'<form action="hinsert.php" method="post" enctype="multipart/form-data">';
+          echo '<table style="border:2px solid grey;border-radius:10px;background-color:#c6e9f2;">';
+           echo '<tr><td>CITY</td><td><input type="text" name="place" placeholder="place" ></td></tr>';
+            echo '<tr><td>NAME</td><td><input type="text" name="name" placeholder="name" ></td></tr>';
+            echo '<tr><td>ADDRESS</td><td><input type="text" name="address" placeholder="address" ></td></tr>';
+            echo '<tr><td>CONTACT</td><td><input type="text" name="contact" placeholder="contact" ></td></tr>';
+            echo '<tr><td>ABOUT</td><td><textarea name="about" placeholder="ABOUT" rows="10" cols="30"></textarea></td></tr>';
+            echo '<tr><td></td><td> <input type="file" name="file" ></td></tr>';
+            echo '<tr><td></td><td><input type="submit" name="submit" value="submit"></td></tr></table>';
+            echo'</form>';
             if($_SERVER['REQUEST_METHOD']=='POST')
             {
               $place=$_POST['place'];
@@ -26,6 +26,7 @@ require('edithotels.php');
                {
                 $resp="<font color='red'><center>Please fill in all fields</center>";
                 echo $resp;
+                header("refresh:2;url=hinsert.php");
                }
             
 else
@@ -47,6 +48,7 @@ if (mysqli_num_rows($resul) > 0)
                   if(mysqli_num_rows($result)>0)
                   {
                   echo "<center>ALREADY EXIST</center>";
+                     header("refresh:2;url=hinsert.php");
                   }
                   else
                   {
@@ -58,6 +60,8 @@ if (mysqli_num_rows($resul) > 0)
                        { 
       
                             echo "<font color='green'><center>INSERTED</center>";
+                                                           header("refresh:2;url=hdelete.php");
+
                           }
                   }
              
@@ -85,6 +89,7 @@ if (mysqli_num_rows($resul) > 0)
       
                             
                             echo "<font color='green'><center>INSERTED</center>";
+                               header("refresh:2;url=hdelete.php");
                           }
                
 

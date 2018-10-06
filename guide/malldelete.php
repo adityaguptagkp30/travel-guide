@@ -68,6 +68,7 @@ tr td:hover { background: #666; color: #FFF; }
                <td>'.$result["address"].'</td>
                  <td>'.$result["contact"].'</td> 
         <td><a href="malldeletep.php?id='.$result["name"].'">DELETE</a></td>
+          <td><a href="mallupdate.php?name='.$result["name"].'&& address='.$result["address"].'&& about='.$result["about"].'&& contact='.$result["contact"].'">UPDATE</a></td>
      </tr>';
   
   

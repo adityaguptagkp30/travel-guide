@@ -67,7 +67,7 @@ tr td:hover { background: #666; color: #FFF; }
                <td>'.$result["address"].'</td>
                  <td>'.$result["contact"].'</td> 
         <td><a href="hdeletep.php?id='.$result["name"].'&& address='.$result["address"].'">DELETE</a></td>';
-       // echo' <td><a href="hupdate.php?name='.$result["name"].'&& address='.$result["address"].'">UPDATE</a></td>';
+      echo' <td><a href="hupdate.php?name='.$result["name"].'&& address='.$result["address"].'&& about='.$result["about"].'&& contact='.$result["contact"].'">UPDATE</a></td>';
   echo ' </center> </tr>';
   
   

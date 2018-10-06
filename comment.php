@@ -73,43 +73,6 @@ require('connection.php');
   .rightmenu ul li a:hover{
   color:  darkblue;
   }
-/*
-  .gallery{ 
-  
-  margin-top: 300px;
-
-
-
-  }*/
-
-
-
-
-  div.gallery {
-    margin-top: 100px;
-    margin-left: 40px;
-    border: 1px solid #ccc;
-    float:left;
-    width: 270px;
-  }
-
-
-  div.gallery:hover {
-        
-    transform: scale(1.2);
-    transition: transform .5s;
-  }
-
-    div.gallery img {
-        width: 100%;
-        height: auto;
-    }
-
-    div.desc {
-        padding: 15px;
-        text-align: center;
-    }
-
   </style>
 
 
@@ -143,9 +106,9 @@ require('connection.php');
   </nav>
   <br><br><br><br><br><br><br><br>
    <?php
-  echo' <form action="comment.php" method="post">
+  echo' <div style="margin-left:100px;margin-right:auto;"><form action="comment.php" method="post">
   <input type="text" name="comment" placeholder="ADD COMMENTS HERE">
-  <input type="submit" name="submit" >
+  <input type="submit" name="submit" ></div>
  
      ';
      $a=$_SESSION['user'];
@@ -160,32 +123,43 @@ require('connection.php');
            }
      if(isset($_POST['submit']))
      {       $comment=$_POST['comment'];
-             
+             if(empty($comment))
+             {
+             	echo "<center><font color=red>please enter valid comment</center>";
+             	header("refresh:2;url=comment.php");
+             }
+             else
+             {
               
               $sql="INSERT INTO comments(id,comment) VALUES('$id','$comment')";
               $result=mysqli_query($conn,$sql);
                $sql="SELECT * FROM comments WHERE id='$id'";
               $result=mysqli_query($conn,$sql);
               if (mysqli_num_rows($result) > 0)  
-            {
+            {$i=0;
    	    while($row = mysqli_fetch_assoc($result))
               {  $id    = $row["comment"];
                  echo '<br>';
-                 echo $id;
+                 $i++;
+                 echo '<div style="margin-left:100px;">'.$i.'.'.$id.'</div>';
+               
                }
            }
              
              
        }
+   }
        else
        {                $sql="SELECT * FROM comments WHERE id='$id'";
               $result=mysqli_query($conn,$sql);
               if (mysqli_num_rows($result) > 0)  
-            {
+            { $i=0;
    	    while($row = mysqli_fetch_assoc($result))
               {  $id    = $row["comment"];
                  echo '<br>';
-                 echo $id;
+                 $i++;
+                 echo '<div style="margin-left:100px;">'.$i.'.'.$id.'</div>';
+               
                }
            }
 

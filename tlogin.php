@@ -10,7 +10,7 @@
 	<style type="text/css">
 		
 		body{
-			background-image: url(IMG2.jpg);
+			background-image: url(ALBATROSS/img2.jpg);
 			background-size: cover;
 			margin: 0px;
 		}

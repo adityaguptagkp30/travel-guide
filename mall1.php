@@ -7,6 +7,7 @@
   if(isset($_SESSION['user'])||isset($_SESSION['admin']))
   {
 	echo "<h1>Welcome: ".$_SESSION['user']."</h1>";
+    echo '<div style="float:right;"><a href="userpanel.php">HOME</a></div>';
 
   }
   else
@@ -26,7 +27,7 @@
         {
      //      $id=$row["name"];
     	// $a=$row["image"];
-    	echo '<div style="width:100%;height:300px;"><a style="height:300px;width:48%;float:left;border:2px solid black;" href="mallinfo.php?id=' . $row["image"] . '"><div style="height:300px;width:100%;float:left;border:2px solid black;">';
+    	echo '<div style="width:100%;height:300px;"><a style="height:300px;width:48%;float:left;border:2px solid black;border-radius:20px;" href="mallinfo.php?id=' . $row["image"] . '"><div style="height:300px;width:100%;float:left;border:2px solid black;border-radius:20px;">';
         echo  " <center><h1>  " . $row["name"]. "</h1></center><br><br>";
        $image = $row['image']; 
         // echo $a;

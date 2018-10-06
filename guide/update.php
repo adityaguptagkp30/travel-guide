@@ -11,7 +11,7 @@ error_reporting(0);
 		  	echo '<center><a href="update.php">add PLACE</a></center>';
 	echo '<center><a href="deleteplace.php">Delete PLACE</a></center>';
 		  	echo'<form action="update.php" method="post" >';
-		    echo '<center><input type="text" name="place" placeholder="place" required=""></center>';
+		    echo '<center><table style="border:2px solid grey;border-radius:10px;background-color:#c6e9f2;"><tr><td>CITY</td><td><input type="text" name="place" placeholder="place" required=""></td></tr></table></center>';
               
 		    echo'</form>';
 		    if($_SERVER['REQUEST_METHOD']=='POST')
